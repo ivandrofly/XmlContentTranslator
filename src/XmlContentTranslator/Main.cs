@@ -38,6 +38,7 @@ namespace XmlContentTranslator
         string _secondLanguageFileName;
         bool _change;
         private Find _formFind;
+        private string _workingDirectory;
 
         public Main()
         {
@@ -62,6 +63,7 @@ namespace XmlContentTranslator
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 MakeNew();
+                _workingDirectory = Path.GetDirectoryName(openFileDialog1.FileName);
                 if (OpenFirstFile(openFileDialog1.FileName))
                     OpenSecondFile();
             }
@@ -164,6 +166,7 @@ namespace XmlContentTranslator
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 OpenSecondFile(openFileDialog1.FileName);
+                _workingDirectory = openFileDialog1.FileName;
             }
             else
             {
@@ -1092,5 +1095,28 @@ namespace XmlContentTranslator
             }
         }
 
+        private void sendPullRequestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Only pass if file is saved.
+            if (false)
+            {
+
+            }
+            if (string.IsNullOrEmpty(_workingDirectory))
+            {
+                MessageBox.Show("No working directory set!");
+                return;
+            }
+            string gitPath = StringUtils.GetGitPath();
+            if (string.IsNullOrEmpty(gitPath))
+            {
+                MessageBox.Show("Git isn't installed!");
+                return;
+            }
+            using (var gitForm = new GitPullRequestForm(Path.GetDirectoryName(_workingDirectory), gitPath))
+            {
+                gitForm.ShowDialog();
+            }
+        }
     }
 }

@@ -59,6 +59,7 @@
             this.labelFrom = new System.Windows.Forms.Label();
             this.comboBoxFrom = new System.Windows.Forms.ComboBox();
             this.buttonGoToNextBlankLine = new System.Windows.Forms.Button();
+            this.sendPullRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -90,19 +91,19 @@
             this.translateViaGoogleToolStripMenuItem,
             this.setValueFromMasterToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(216, 48);
             // 
             // translateViaGoogleToolStripMenuItem
             // 
             this.translateViaGoogleToolStripMenuItem.Name = "translateViaGoogleToolStripMenuItem";
-            this.translateViaGoogleToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.translateViaGoogleToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.translateViaGoogleToolStripMenuItem.Text = "Translate via google";
             this.translateViaGoogleToolStripMenuItem.Click += new System.EventHandler(this.translateViaGoogleToolStripMenuItem_Click);
             // 
             // setValueFromMasterToolStripMenuItem
             // 
             this.setValueFromMasterToolStripMenuItem.Name = "setValueFromMasterToolStripMenuItem";
-            this.setValueFromMasterToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.setValueFromMasterToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.setValueFromMasterToolStripMenuItem.Text = "Transfer value from master";
             this.setValueFromMasterToolStripMenuItem.Click += new System.EventHandler(this.setValueFromMasterToolStripMenuItem_Click);
             // 
@@ -201,9 +202,10 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.googleTranslateSelectedLinesToolStripMenuItem});
+            this.googleTranslateSelectedLinesToolStripMenuItem,
+            this.sendPullRequestToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // googleTranslateSelectedLinesToolStripMenuItem
@@ -312,6 +314,13 @@
             this.buttonGoToNextBlankLine.UseVisualStyleBackColor = true;
             this.buttonGoToNextBlankLine.Click += new System.EventHandler(this.ButtonGoToNextBlankLineClick);
             // 
+            // sendPullRequestToolStripMenuItem
+            // 
+            this.sendPullRequestToolStripMenuItem.Name = "sendPullRequestToolStripMenuItem";
+            this.sendPullRequestToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.sendPullRequestToolStripMenuItem.Text = "Send pull request (Github)";
+            this.sendPullRequestToolStripMenuItem.Click += new System.EventHandler(this.sendPullRequestToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +386,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sendPullRequestToolStripMenuItem;
     }
 }
 

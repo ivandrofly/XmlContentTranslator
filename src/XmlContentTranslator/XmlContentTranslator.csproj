@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GitPullRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GitPullRequestForm.Designer.cs">
+      <DependentUpon>GitPullRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Git\CommandLineRunner.cs" />
     <Compile Include="Find.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +72,9 @@
     <Compile Include="StringUtils.cs" />
     <EmbeddedResource Include="Find.resx">
       <DependentUpon>Find.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GitPullRequestForm.resx">
+      <DependentUpon>GitPullRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
